@@ -74,3 +74,8 @@ export PATH=$SVF_DIR/$Build/bin:$PATH
 
 # Add compiled library directories to $LD_LIBRARY_PATH
 export LD_LIBRARY_PATH=$SVF_DIR/$Build/svf:$SVF_DIR/$Build/svf-llvm:$LD_LIBRARY_PATH
+
+echo "export LLVM_DIR=$LLVM_DIR" >> ~/.bashrc
+echo "export Z3_DIR=$Z3_DIR" >> ~/.bashrc
+echo "export SVF_DIR=$SVF_DIR" >> ~/.bashrc
+echo "export PATH=$SVF_DIR/Release-build/bin:$LLVM_DIR/bin:$PROJECTHOME/bin:$PATH" >> ~/.bashrc

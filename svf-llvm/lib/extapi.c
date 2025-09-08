@@ -1299,8 +1299,9 @@ typedef void* napi_finalize;
 typedef void* napi_callback;
 #define napi_ok 0
 
-
+__attribute__((annotate("OVERWRITE")))
 napi_status napi_get_cb_info(napi_env env, napi_callback_info cbinfo, size_t* argc, napi_value* argv, napi_value* thisArg, void** data) {
+    cbinfo = malloc(*argc * sizeof(char));
     for (size_t i = 0; i < *argc; i++) {
         argv[i] = cbinfo;
     }
